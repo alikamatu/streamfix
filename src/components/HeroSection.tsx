@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Play, Plus, Info, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBanner from "@/assets/hero-banner.jpg";
-import heroVideoPoster from "@/assets/hero-video-poster.jpg";
+import heroBanner from "@/assets/sinners.jpg";
+import heroVideoPoster from "@/assets/sinners.jpg";
 
 const HeroSection = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -26,7 +26,8 @@ const HeroSection = () => {
             muted={isMuted}
             playsInline
           >
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+            <source src="/movies/Sinners-Official-Trailer.mp4" type="video/mp4" />
+            {/* <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" /> */}
             <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
           </video>
         ) : (
@@ -43,24 +44,24 @@ const HeroSection = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+      <div className="absolute left-20 bottom-40 z-10 px-4 sm:px-6 lg:px-8 text-left">
         <div className="max-w-3xl space-y-8 animate-fade-in">
           {/* Hero Title */}
           <h1 className="text-6xl md:text-8xl font-bold text-foreground leading-tight">
-            Quantum
-            <span className="text-primary block md:inline"> Nexus</span>
+            Sinners
+            <span className="text-primary block md:inline"> 2025</span>
           </h1>
           
           {/* Hero Description */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed" style={{ animationDelay: '0.2s' }}>
-            In a world where reality bends to quantum mechanics, a brilliant scientist discovers 
-            a portal to parallel dimensions. But each journey comes with a devastating cost.
+            Trying to leave their troubled lives behind, twin brothers return to their Mississippi hometown to start again, 
+            only to discover that an even greater evil is waiting to welcome them back.
           </p>
           
           {/* Movie Details */}
           <div className="flex flex-wrap items-center gap-6 text-muted-foreground" style={{ animationDelay: '0.4s' }}>
             <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-              2024
+              2025
             </span>
             <span className="text-lg">2h 18m</span>
             <span className="text-lg">Sci-Fi • Action</span>

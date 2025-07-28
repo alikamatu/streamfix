@@ -15,7 +15,7 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ id, title, image, year, rating, duration, genre, isLarge = false }: MovieCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [ised, setIsed] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -23,25 +23,25 @@ const MovieCard = ({ id, title, image, year, rating, duration, genre, isLarge = 
       className={`relative group cursor-pointer transition-all duration-300 ${
         isLarge ? 'w-72 h-96' : 'w-48 h-72'
       }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => setIsed(true)}
+      onMouseLeave={() => setIsed(false)}
       onClick={() => navigate(`/movie/${id}`)}
     >
       {/* Movie Poster */}
-      <div className="relative w-full h-full rounded-lg overflow-hidden movie-card-hover">
+      <div className="relative w-full h-full rounded-lg overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-300"
         />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-:opacity-100 transition-opacity duration-300" />
         
-        {/* Hover Content */}
+        {/*  Content */}
         <div
-          className={`absolute inset-0 flex flex-col justify-end p-4 transition-all duration-300 ${
-            isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          className={`absolute inset-0 flex flex-col justify-end p-4 transition-all duration-300 bg-black/60 ${
+            ised ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
           <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{title}</h3>
@@ -59,19 +59,19 @@ const MovieCard = ({ id, title, image, year, rating, duration, genre, isLarge = 
           
           {/* Action Buttons */}
           <div className="flex items-center space-x-2">
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground p-2 rounded-full">
+            <Button size="sm" className="bg-primary :bg-primary/90 text-primary-foreground p-2 rounded-full">
               <Play className="h-3 w-3" />
             </Button>
             
-            <Button variant="ghost" size="sm" className="text-white hover:text-primary p-2 rounded-full border border-white/30 hover:border-primary">
+            <Button variant="ghost" size="sm" className="text-white :text-primary p-2 rounded-full border border-white/30 :border-primary">
               <Plus className="h-3 w-3" />
             </Button>
             
-            <Button variant="ghost" size="sm" className="text-white hover:text-primary p-2 rounded-full border border-white/30 hover:border-primary">
+            <Button variant="ghost" size="sm" className="text-white :text-primary p-2 rounded-full border border-white/30 :border-primary">
               <ThumbsUp className="h-3 w-3" />
             </Button>
             
-            <Button variant="ghost" size="sm" className="text-white hover:text-primary p-2 rounded-full border border-white/30 hover:border-primary ml-auto">
+            <Button variant="ghost" size="sm" className="text-white :text-primary p-2 rounded-full border border-white/30 :border-primary ml-auto">
               <ChevronDown className="h-3 w-3" />
             </Button>
           </div>
@@ -80,20 +80,20 @@ const MovieCard = ({ id, title, image, year, rating, duration, genre, isLarge = 
         {/* Play Button Overlay */}
         <div
           className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-            isHovered ? 'opacity-100' : 'opacity-0'
+            ised ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <Button
             size="lg"
-            className="bg-white/20 hover:bg-white/30 text-white border-2 border-white/50 hover:border-white rounded-full p-4 backdrop-blur-sm"
+            className="bg-white/20 :bg-white/30 text-white border-2 border-white/50 :border-white rounded-full p-4 backdrop-blur-sm"
           >
             <Play className="h-6 w-6 ml-1" />
           </Button>
         </div>
       </div>
       
-      {/* Enhanced Hover Effect - Expanded Card */}
-      <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-card/20 rounded-xl shadow-2xl border border-border/10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm" />
+      {/* Enhanced  Effect - Expanded Card */}
+      <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-card/20 rounded-xl shadow-2xl border border-border/10 pointer-events-none opacity-0 group-:opacity-100 transition-opacity duration-300 backdrop-blur-sm" />
     </div>
   );
 };
